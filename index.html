@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube概要欄検索アプリ</title>
+    <script type="module" crossorigin src="/assets/index-CHQSM3Ok.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dj2KI5gq.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>YouTube概要欄検索アプリ</h1>
+        <p>特定のYouTubeチャンネルの動画概要欄から指定された文字列を検索します</p>
+        <div class="demo-notice">
+          <p><strong>🎯 デモ版:</strong> 「JavaScript」「React」「Node」「CSS」「HTML」「TypeScript」「Vue」「Webpack」「Vite」などのキーワードで検索してみてください</p>
+          <p><strong>🔧 技術:</strong> ytdl-coreライブラリを使用したクライアントサイド完結型実装</p>
+        </div>
+      </header>
+
+      <main>
+        <form id="search-form">
+          <div class="input-group">
+            <label for="channel-url">チャンネルURL:</label>
+            <input
+              type="url"
+              id="channel-url"
+              placeholder="https://www.youtube.com/@channelname"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="search-query">検索文字列:</label>
+            <input
+              type="text"
+              id="search-query"
+              placeholder="検索したい文字列を入力"
+              required
+            />
+          </div>
+
+          <button type="submit" id="search-button">検索開始</button>
+        </form>
+
+        <div id="loading" class="hidden">
+          <p>検索中です... しばらくお待ちください</p>
+        </div>
+
+        <div id="results">
+          <h2>検索結果</h2>
+          <div id="results-count"></div>
+          <ul id="results-list"></ul>
+        </div>
+
+        <div id="error" class="hidden error">
+          <p id="error-message"></p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
